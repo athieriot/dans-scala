@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Scala</title>
+
+		<meta name="description" content="Indroduction to the Scala language and overview of Play Framework">
+		<meta name="author" content="Aurélien Thieriot">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Dans Scala</h1>
+					<h3>Introduction of the Scala language</h3>
+					<p>
+						<small>And overview of Play! Framework</small>
+					</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+            _Scala is a <u>general purpose programming</u> language designed to express common programming patterns in a concise, elegant, and <u>type-safe way</u>. It smoothly integrates features of <u>object-oriented</u> and <u>functional languages</u>, enabling <u>Java</u> and other programmers to be more productive. Code sizes are typically reduced by a factor of two to three when compared to an equivalent Java application._
+
+            __scala-lang.org__
+          </script>
+        </section>
+
+				<section>
+          <h2>What did you say?</h2>
+          <img src="img/babancat-1353755913_600.jpg"/><br/>
+          <small>(Meh)</small>
+        </section>
+
+				<section>
+					<h2>Introduction</h2>
+        </section>
+
+        <section>
+          <section>
+            <h3>Scala is:</h3>
+            <p class="fragment grow"><strong>A statically typed language</strong><br /><small>Strongly typed</small></p>
+            <p class="fragment grow"><strong>Hybrid: Object / Functional</strong><br /><small>Enforce immutability</small></p>
+            <p class="fragment grow"><strong>Running on the JVM</strong><br /><small>Compatible with Java libraries</small></p>
+					</section>
+        </section>
+
+        <section>
+          <section>
+          <h2>First:</h2>
+          <h3>Knowing you better</h3>
+          <img src="img/Portal_Icon_by_DrGordon_Freeman.png" />
+          </section>
+
+          <section>
+          <h4>What language are you using?</h4>
+          <pre><code id="languagesData" data-trim contenteditable>
+{
+  "labels": ["Java","Scala","Clojure",".Net","Ruby","Python","Javascript",
+            "PHP", "other"],
+	"datasets": [
+		{
+			"fillColor": "rgba(220,220,220,0.5)",
+			"strokeColor": "rgba(220,220,220,1)",
+			"data": [65,59,90,81,56,55,2]
+		}
+	]
+}
+          </code></pre>
+          </section>
+          <section>
+          <h4>Do you prefer static typing or dynamic?</h4>
+          <pre><code id="typeData" data-trim contenteditable>
+[
+  {
+    "label": "Static",
+		"value": 30,
+		"color":"#009966"
+	},
+	{
+    "label": "Dynamic",
+		"value" : 50,
+		"color" : "#0000CC"
+	}
+]
+          </code></pre>
+          </section>
+          <section>
+          <h4>Are you familiar with the concept of functional programing?</h4>
+          <pre><code id="usageData" data-trim contenteditable>
+[
+  {
+    "label": "Yes",
+		"value": 30,
+		"color":"#009966"
+	},
+	{
+    "label": "No",
+		"value" : 50,
+		"color" : "#CC0033"
+	}
+]
+          </code></pre>
+          </section>
+
+          <section>
+          <a id="eval">OK</a><br/>
+          <canvas id="languagesChart" width="600" height="400" style="float:left"></canvas>
+          <canvas id="typeChart" width="200" height="200"></canvas>
+          <div><canvas id="usageChart" width="200" height="200"></canvas></div>
+          </section>
+        </section>
+
+        <section>
+          <h2>Why using Scala?</h2>
+          <h4>quiz match {case "Static" =>}</h4>
+          <br />
+          <p>Guys.</p>
+          <p>Dynamic languages are not dirty.</p>
+          <p>It's a trade off between runtime flexibility and compile time safety.</p>
+          <br />
+          <p>Scala will let you start in your comfort zone and will progressively bring more powerful tools and syntactic sugar.</p>
+        </section>
+
+				<section>
+          <h2>Why using Scala?</h2>
+          <h4>quiz match {case "Dynamic" =>}</h4>
+          <p>Guys.</p>
+          <p>Static languages are not dirty.</p>
+          <p>It's a trade off between runtime flexibility and compile time safety.</p>
+          <br />
+          <p>Scala provide enough syntactic sugar to accept the type system and open the door to the Java ecosystem.</p>
+        </section>
+
+        <section>
+          <h2>Try it</h2>
+          <img src="img/use-it-house-brain.jpg" />
+          <h4>Love it</h4>
+        </section>
+
+				<section>
+          <h2>But don't forget</h2>
+          <img src="img/5292815_std.jpg"/><br />
+          <small>(With great power...)</small><br />
+        </section>
+
+				<section>
+          <h2>A bit of history</h2>
+          <img src="img/Odersky.jpg"/><br />
+          <small>(Martin Odersky in "The Shining")</small><br />
+          <small>(I'm super afraid of this guy)</small>
+        </section>
+
+        <section>
+          <ul>
+            <li><strong>[1995]</strong> Martin Odersky start working on Pizza. A functional language that compile to Java bytecodes (With Generics and other delicacies)</li>
+            <li><strong>[1998]</strong> This work leads to the GJ compiler (Generic Java) which become the default compiler in Java 1.3</li>
+            <li><strong>[1999]</strong> Odersky join the EPFL, School of Engineering of Lausanne. Where he still is (I think)</li>
+            <li><strong>[2000]</strong> His quest for a functional language continue with Funnel. But it's more like a pure academic experiment
+            <li><strong>[2001]</strong> The first lines of Scala are being written</li>
+            <li><strong>[2003]</strong> First official release</li>
+            <li><strong>[2005]</strong> Martin Odersky's Generics are finally released in Java 5 (dude)</li>
+            <li><strong>[2006]</strong> Major refactoring of the language</li>
+            <li><strong>[2011]</strong> Martin Odersky found Typesafe Inc. A company to support and promote Scala. Digesting the frameworks Akka and Play!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>It's not hipster anymore!</h2>
+          <h4>Scala is here to stay</h4>
+          <img src="img/hipster_cat.jpg"/>
+        </section>
+
+        <section>
+          <h2>So let's begin</h2>
+          <img src="img/Red-and-blue-pills.jpg" />
+        </section>
+
+        <section>
+          <h2>The blue pill</h2>
+          <h4>A world of objects</h4>
+          <img src="img/1+3=4.JPG" />
+        </section>
+
+        <section>
+          <h2>Everything is expression</h2>
+          <pre><code data-trim class="scala">
+// Executed immediately and assign to an immutable variable
+val storyTeller: String = "Steven Moffat"
+
+// Define a method. Executed when called
+// = means the method return a value
+def watch(season: Int): String = {
+    "The season " + season  + " is so lame"
+}
+// Or in one line
+def watch(): String = ("My favourite season is " + bestSeason)
+
+// Executed first time we call it
+lazy val bestSeason: Int = 6
+
+// Executed now but assign a mutable variable
+// Can use blocks as well
+var xman: String = {
+   "Wolv" + "erine"
+}
+
+xman = watch(8)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Type inference</h2>
+          <pre><code data-trim class="scala">
+// Will be a String
+val storyTeller = "Steven"
+
+// Can't infer the Integer but can deduce the return type
+def watch(season: Int) = {
+    "The season " + season  + " is so lame"
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Simple classes</h2>
+          <pre><code data-trim class="scala">
+// Feeling like home
+class Doctor(n: String) {
+  var name: String = n
+   
+  def setName(name: String) {
+    this.name = name
+  }
+  
+  def getName() = {
+    this.name
+  }
+  override def toString(): String = "My name is " + name;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Case classes</h2>
+          <h4>(Power is coming)</h4>
+          <pre><code data-trim class="scala">
+// Comes with default constructors, equals, hash code, accessors, and much more
+
+case class Doctor(name: String, number: Int)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Object</h2>
+          <pre><code data-trim class="scala">
+// Convenient way to create a singleton
+object Rory {
+
+   def status() = "Roman"
+}
+
+Rory.status()
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Traits</h2>
+          <pre><code data-trim class="scala">
+// Like interface but can contain implementation
+// Allow multi inheritance
+trait Ginger {
+   def hairColor() = "Red"
+}
+
+trait Baby {
+   def hasBaby() = true
+}
+
+class Amy(name: String) extends Ginger with Pregnant
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Generics</h2>
+          <pre><code data-trim class="scala">
+case class Doctor()
+case class Companion()
+
+class Tardis[T](pilot: T) {
+
+   def contains() = (pilot.getClass())
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Collections</h2>
+          <img src="img/mainQuang1_609887a.jpg">
+        </section>
+
+        <section>
+          <h2>List, Set, Map, etc...</h2>
+          <pre><code data-trim class="scala">
+// We have the standard things we got in Java
+
+val mainList = List(3, 2, 1)
+
+val map = Map(1 -> "one", 2 -> "two", 3 -> "three")
+
+// Choice between Immutable and Mutable collections
+// Immutable by default
+
+import scala.collection.immutable.List
+import scala.collection.mutable.List
+
+// The collection API of Scala is very powerful
+
+mainList.head
+mainList.tail
+mainList.count
+mainList.contains(2)
+//...
+//More about this later
+          </code></pre>
+          <a href="http://www.scala-lang.org/api/current/index.html">http://www.scala-lang.org/api/current/index.html</a>
+        </section>
+
+        <section>
+          <h2>ALL THE TYPES !</h2>
+          <img src="img/collections.immutable.png" />
+        </section>
+
+        <section>
+          <h2>Range</h2>
+          <pre><code data-trim class="scala">
+// Lazy loaded range of values
+(1 to 1000).toList
+
+5 to 14 by 3
+
+1 until 5
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Pattern Matching</h2>
+
+          <img src="img/holy-grail.jpg">
+        </section>
+
+        <section>
+          <h2>Not just a Switch statement</h2>
+          <pre><code data-trim class="scala">
+// The most powerful aspect of Scala
+
+x match {
+  case "River" => println("Found River")
+  case Doctor(name) => println("Found " + name + " as the Doctor")
+  case Companion("Sarah", _, "Smith") => println("Found Sarah Jane Smith")
+  case "Rory" | "Amy" => println("Found Rory or Amy")
+  case x: Int if x > 5 => println("Found an Integer greater than 5")
+  case hartnell :: smith :: Nil => println("Found the first, the last")
+  case hartnell :: other => println("Found the first doctor and the others")
+  case x => println("Found anything else")
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>The red pill</h2>
+          <h4>It's a monad if you can flatMap zat sh**</h4>
+          <img src="img/Lamda.png">
+        </section>
+
+        <section>
+          <h2>Higher Order functions</h2>
+          <pre><code data-trim class="scala">
+// Functions are just objects
+
+def blink(didYou: Boolean): String = didYou match {
+  case true => "You're dead"
+  case false => "Everything is fine"
+}
+
+def dont(move: Boolean => String, didYou: Boolean) = move(didYou)
+
+dont(blink, false)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Closures</h2>
+          <pre><code data-trim class="scala">
+// argument: Type => result
+// The rocket define a function
+
+val name = "Captain Baker"
+
+dont({ didYou: Boolean =>
+  didYou match {
+    case true => "You're dead " + name
+    case false => "Everything is fine " + name
+  }
+}, true)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Collection API full of that</h2>
+          <pre><code data-trim class="scala">
+// Scala relies a lot on Higher Order Functions
+// The collection API is a very good example
+
+val monsters = List("Silence", "Vashta Nerada", "Daleks", "Cybermen")
+
+monsters.map({ name: String => name.toUpperCase })
+
+// Syntactic Sugar
+// '_' is the great wildcard of Scala
+
+monsters.map(_.toUpperCase)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Options (call me maybe)</h2>
+          <pre><code data-trim class="scala">
+// An Option can be something or not
+// The solution to avoid NullPointerException
+trait Gender
+case class Female() extends Gender
+case class Male() extends Gender
+
+val nextDoctor: Option[Gender] = None
+
+// Easily matchable
+nextDoctor match {
+  case None => "None defined yet"
+  case Some(x) => "The next doctor is a: " + x.getClass()
+}
+
+// Returning a default value
+match.getOrElse(Female())
+
+// You can use Map as well
+val clara: Option[String] = None
+
+clara.map(_.toUpperCase)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Partial Application</h2>
+          <pre><code data-trim class="scala">
+// You can make functions that return functions
+case class Tardis()
+case class Doctor()
+
+def fly(t: Tardis)(d: Doctor) = { "Geronimo" }
+
+val flyATardis = fly(Tardis())_
+
+flyATardis(Doctor())
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>What else?</h2>
+          <img src="img/what_else-george-clooney.jpg">
+        </section>
+
+        <section>
+          <section>
+            <h3>Not covered here</h3>
+            <p class="fragment visible">More on collections (flatMap, Parallel), Tuple</p>
+            <p class="fragment visible">For comprehensions</p>
+            <p class="fragment visible">Implicits</p>
+            <p class="fragment visible">Actors (And Akka)</p>
+            <p class="fragment visible">Futures</p>
+            <p class="fragment visible">Streams</p>
+            <p class="fragment visible">Covariance / Contravariance</p>
+            <p class="fragment visible">Macros</p>
+					</section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Some negative points</h3>
+            <p>Binary compatibility</p>
+            <p>Slowwww Compiler</p>
+					</section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Let's talk about tools</h3>
+            <img width="400px" src="img/shutterstock_82546648.jpg" />
+					</section>
+        </section>
+
+        <section>
+          <section>
+            <h3>But first...</h3>
+					</section>
+          </section>
+
+        <section>
+          <h2>The French joke</h2>
+          <img src="img/escargot.jpg">
+          <h4>(I will snail it)</h4>
+        </section>
+
+        <section>
+          <section>
+            <p>In this case</p>
+            <p class="fragment visible">=> Dans ce cas là</p>
+            <p class="fragment visible">=> Dans s'cas là</p>
+            <p class="fragment visible">=> Dans scala</p>
+            <p class="fragment visible">In this case (dans scala), it's not possible</p>
+            <p class="fragment visible">Are you kidding, of course it's possible in Scala !</p>
+					</section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Introducing:</h3>
+            <h3>Play! Framework</h3>
+            <img src="img/play_framework.png" />
+            <img src="img/clients.png" />
+					</section>
+        </section>
+
+        <section>
+          <section>
+            <h3>A full stack framework</h3>
+            <p>For Java and Scala</p>
+            <p>Rely on SBT</p>
+            <p>Using Netty server (Non-blocking I/O)</p>
+            <p>Stateful architecture</p>
+            <p>Typesafe Database Integration</p>
+            <p>Migrations</p>
+            <p>Testing layers provided (Fluentlenium for integration)</p>
+            <p>Templating via Scalate</p>
+            <p>Integrate an REPL</p>
+            <p>Compatible with IntelliJ / Eclipse / ... VIM</p>
+            <p>Supported in Heroku, Travis, NewRelic</p>
+            <p>...</p>
+					</section>
+          </section>
+
+				<section>
+          <h2>Quick example</h2>
+          <h4>Asynchronous call</h4>
+        </section>
+
+				<section>
+          <h2>Me</h2>
+          <ul>
+            <li>Aurélien Thieriot</li>
+          </ul><br/>
+          <img width="100" src="img/828968560d5ff7fd616e1514c5de1846.png"/>
+          <p>@athieriot</p>
+        </section>
+
+        <!--
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
+					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+					<script>
+						document.getElementById('slideshare').attributeName = 'allowfullscreen';
+					</script>
+          </section>
+          -->
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"> </script>
+    <script src="js/Chart.min.js"> </script>
+
+    <script>
+
+      $('#eval').click(function () {
+        var languagesCtx = $("#languagesChart").get(0).getContext("2d");
+        var languagesData = JSON.parse($("#languagesData").text());
+
+        //This will get the first returned node in the jQuery collection.
+        var languagesChart = new Chart(languagesCtx).Bar(languagesData);
+
+        var usageCtx = $("#usageChart").get(0).getContext("2d");
+        var usageData = JSON.parse($("#usageData").text());
+
+        //This will get the first returned node in the jQuery collection.
+        var usageChart = new Chart(usageCtx).Pie(usageData);
+
+        var typeCtx = $("#typeChart").get(0).getContext("2d");
+        var typeData = JSON.parse($("#typeData").text());
+
+        //This will get the first returned node in the jQuery collection.
+        var typeChart = new Chart(typeCtx).Pie(typeData);
+      });
+    </script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'page', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
